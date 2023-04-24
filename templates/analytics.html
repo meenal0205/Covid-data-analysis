@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics</title>
+<script type='text/javascript' src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script src='https://code.jquery.com/ui/1.13.1/jquery-ui.js' 
+integrity='sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=' 
+crossorigin='anonymous'></script>
+<link href='https://code.jquery.com/ui/1.13.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet' type='text/css'>
+</head>
+
+<style>
+
+:root
+{
+    --colour_prim: #7380ec;
+    --colour_danger: #ff7782;
+    --colour_success: #41f1b6;
+    --colour_warning: #ffbb55;
+    --colour_white: #fff;
+    --colour_info_dark: #7d8da1;
+    --colour_info_light: #dce1eb;
+    --colour_dark: #363949;
+    --colour_light: rgba(132,139,200,0.18);
+    --colour_prim_var: #111e88;
+    --colour_dark_var: #677483;
+    --colour_bg: #cef0fa;
+
+    --card_border_radius: 2rem;
+    --border_radius_1: 0.4rem;
+    --border_radius_2: 0.8rem;
+    --border_radius_3: 1.2rem;
+
+    --card_padding: 1.8rem;
+    --padding: 1.2rem;
+
+    --box_shadow: 0 2rem 3rem var(var(--colour_light));
+}
+
+
+*
+{
+    background-color: #b4b2c7ef;
+}
+
+.container
+{
+    display: grid;
+    margin: 0 auto;
+    position: absolute;
+    top: 12.5rem;
+    left: 10rem;
+    grid-template-columns: 21.5rem 21.5rem 21.5rem ;
+    grid-template-rows: 13rem 13rem;
+    /* position: absolute; */
+    margin-right: 0.5rem;
+    gap: 1.8rem;
+}
+
+.container div
+{
+    background: #fad6f4;
+    padding: 1.8rem;
+    border-radius: 3rem;
+}
+
+.container div h3
+{
+    color: #ff7782;
+    background-color: #fad6f4;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container div a
+{
+    font-size: small;
+    color: #abadb3;
+    background-color: #fad6f4;
+}
+
+.container div h4
+{
+    background-color: #fad6f4;
+}
+
+#go
+{
+    color: #404142;
+}
+
+h1
+{
+    font-size:2.9rem;
+    padding-left: 43%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #404142;
+}
+
+h2
+{
+    font-size: 1.7rem;
+    padding-left: 41%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #677483;
+}
+
+</style>
+
+<body>
+
+    <div class="back">
+        <button id="go"><a href="/">Home</a></button>
+    </div>
+
+    <h1>Analytics</h1>
+    <h2>Graphs & Charts</h2>
+
+    
+
+    <div class="container">
+        <div class="g1">
+            <h3>Active Covid Cases</h3>
+            <h4><a href='topactive'>View more</a></h4>
+        </div>
+        <div class="g2">
+            <h3>Confirmed Cases & Deaths</h3>
+            <h4><a href='confirmedvedeaths'>View more</a></h4>
+        </div>
+        <div class="g3">
+            <h3>Total Confirmed cases</h3>
+            <h4><a href='totalconfirmed'>View more</a></h4>
+        </div>
+        <div class="g4">
+            <h3>Genderwise Vaccination</h3>
+            <h4><a href='genderwise'>View more</a></h4>
+        </div>
+        <div class="g5">
+            <h3>Total Deaths</h3>
+            <h4><a href='totaldeath'>View more</a></h4>
+        </div>
+    </div>
+
+</body>
+</html>

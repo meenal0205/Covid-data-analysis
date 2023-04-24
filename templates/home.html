@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type='text/javascript' src='https://code.jquery.com/jquery-3.6.0.js'></script>
+  <script src='https://code.jquery.com/ui/1.13.1/jquery-ui.js' 
+  integrity='sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=' 
+  crossorigin='anonymous'></script>
+  <link href='https://code.jquery.com/ui/1.13.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet' type='text/css'>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"/>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  
+</head>
+<body>
+<div class="container">
+  <aside >
+      <!-- LOGO & Name -->
+      <div class="top">
+          <div class="logo">
+              
+              <h2><span style="color: rgba(49, 103, 105, 0.637);"> Covid-19</span> <span style="color:rgb(70, 202, 158);">Dashboard</span></h2>
+          </div>
+      </div>
+
+      <!-- Menu Button -->
+      <div id="menu_btn">
+      <span class="material-icons-sharp">menu</span>
+      </div>
+
+
+      <!-- CLOSE BUTTON -->
+      <div class="close_btn" id="close_btn">
+          <span class="material-icons-sharp">close</span>
+      </div>
+
+
+      <!-- SIDEBAR ELEMENTS -->
+      <div class="sidebar">
+          <a href="#">
+              <span class="material-icons-sharp">grid_view</span>
+              <h3>Dashboard</h3>
+          </a>
+          <a href="analytics">
+              <span class="material-icons-sharp">analytics</span>
+              <h3>Analytics</h3>
+          </a>
+          <a href="probabilitydetector">
+              <span class="material-icons-sharp">medical_information</span>
+              <h3>Covid Test</h3>
+          </a>
+          
+          
+          <a href="know_more">
+              <span class="material-icons-sharp">person_outline</span>
+              <h3>Know more</h3>
+          </a>
+          
+        </div>
+
+  </aside>
+
+
+  
+  <main >
+      <h1><span style="color:rgb(61, 78, 85)">Dashboard</span></h1>
+      
+     
+
+      <div class="analytics">
+          <div class="cases_td">
+              <span class="material-icons-sharp">sick</span>
+              <div class="middle">
+                  <div class="right">
+                      <h4>Covid cases Today:</h4>
+                      <h3>45K +</h3>
+                  </div>
+              </div>
+
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+          <div class="vaccination_td">
+              <span class="material-icons-sharp">vaccines</span>
+              <div class="middle">
+                  <div class="left">
+                      <h4>Vaccinations Today:</h4>
+                      <h3>15 Lakhs +</h3>
+                  </div>
+                  
+              </div>
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+          <div class="registrations_td">
+              <span class="material-icons-sharp">how_to_reg</span>
+              <div class="middle">
+                  <div class="mid">
+                      <h4>Registrations Today:</h4>
+                      <h3>7 Lakhs +</h3>
+                  </div>
+                      
+                 
+              </div>
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+          <div class="full_vac_td">
+              <span class="material-icons-sharp">health_and_safety</span>
+              <div class="middle">
+                  <div class="right">
+                      <h4>Fully Vaccinated Today:</h4>
+                      <h3>8 Lakhs +</h3>
+                  </div>
+              </div>
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+          <div class="cases">
+              <span id="total" class="material-icons-sharp">insights</span>
+              <div class="middle">
+                  <div class="right">
+                      <h4>Total Covid cases:</h4>
+                      <h3>450 Crores +</h3>
+                  </div>
+              </div>
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+          <div class="vaccinations">
+              <span id="total" class="material-icons-sharp">insights</span>
+              <div class="middle">
+                  <div class="right">
+                      <h4>Total Vaccinations:</h4>
+                      <h3>181 crores +</h3>
+                  </div>
+              </div>
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+          <div class="registrations">
+              <span class="material-icons-sharp">insights</span>
+              <div class="middle">
+                  <div class="right">
+                      <h4>Total Registrations:</h4>
+                      <h3>105 crores +</h3>
+                  </div>
+              </div>
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+          <div class="sites">
+              <span class="material-icons-sharp">insights</span>
+              
+              <div class="middle">
+                  <div class="right">
+                      <h4>Total Sites Operating:</h4>
+                      <h3>45K +</h3>
+                  </div>
+              </div>
+              <small class="text_muted">Last 24 hours</small>
+          </div>
+      </div>
+
+      <div id='map'></div>
+  </main>
+</div>
+
+<script src="{{ url_for('static',filename='index.js')}}"></script>
+<!-- <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+<script> -->
+<!-- mapboxgl.accessToken = 'pk.eyJ1IjoiZnVnZ3MxMzQ3IiwiYSI6ImNsMTF3aDgwdjA1dTEzY3A0YmxxYzZudGYifQ.kgWahH-A5V9y4xzSHzzkSQ';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/fuggs1347/cl11x2csh000h14lhsnpewm02',
+  zoom: 4,
+  center:[81,25]
+}); -->
+<!-- </script> -->
+
+</body>
+</html>

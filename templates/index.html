@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Data Analysis</title>
+</head>
+
+<link rel="stylesheet" type="text/css"href="{{ url_for('static',filename='styles.css')}}">
+
+<body>
+    
+    <div class="contianer">
+        <div class="title">Covid probability check</div>
+        <form action="/probabilitydetector" method="POST">
+            <div class="userdetails">
+
+                <div class="input-box">
+                    <span class="details">Temperature</span>
+                    <input type="text" placeholder="Enter your temperature" name="fever"required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Age</span>
+                    <input type="text" name="age" placeholder="Enter your Age" required>
+                </div>
+
+                <div class="input-box">
+                    <label class="input-box">Are you experiencing any body-pain?</label>
+                    <select  id="body-pain" name="bodypain">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                
+
+                <div>
+                    <label class="input-box">Are you experiencing any loss in smell or taste?</label>
+                    <select id="smell-taste" name="loss-taste-smell">
+                        <option value="1">Yes </option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="input-box">Do you have sore throat?</label>
+                    <select id="sore-throat" name="soreThroat">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="input-box">Do you have a headache?</label>
+                    <select id="headache" name="head-ache">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+
+                    </select>
+                </div>
+                <div>
+                    <label class="input-box">Are you experiencing any diffculty in breathing?</label>
+                    <select id="diff-breathing" name="diff-breathing">
+                        <option value="1">Yes</option>
+                        <option value="-1">No</option>
+                        <option value="0">slightly</option>
+                    </select>
+                </div>
+                </div>
+                <div class="button">
+                <input type="submit" value="SUBMIT">
+                </div>
+                
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+<!-- Fever','Body Pain','Age','Lost of smell or taste','Sore throat','headache','Difficulty in breathing','Infection probability -->
